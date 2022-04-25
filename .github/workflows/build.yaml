@@ -55,7 +55,7 @@ jobs:
       id: set_proj_version
       shell: pwsh
       run: |
-        [xml]$nuspec = Get-Content src\Alexa.Net.MediatR.DI\Alexa.Net.MediatR.DI.csproj
+        [xml]$nuspec = Get-Content src\Alexa.Net.MediatR.Extensions.Microsoft.DependencyInjection\Alexa.Net.MediatR.Extensions.Microsoft.DependencyInjection.csproj
         $version=$nuspec.project.propertygroup.versionprefix
         $relnotes=$nuspec.project.propertygroup.packagereleasenotes
         Write-Output "::set-output name=PKG_VERSION::$version"
