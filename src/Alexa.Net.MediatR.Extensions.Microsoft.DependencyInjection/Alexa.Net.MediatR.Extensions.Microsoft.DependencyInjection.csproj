@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <VersionPrefix>1.0.0</VersionPrefix>
+    <VersionPrefix>1.0.1</VersionPrefix>
     <RootNamespace>Alexa.Net.MediatR</RootNamespace>
     <Authors>Nick Cipollina</Authors>
     <Description>Alexa.Net.MediatR extensions for Microsoft.Extensions.DependencyInjection</Description>
@@ -12,12 +12,12 @@
     <RepositoryUrl>https://github.com/ncipollina/alexa-net-mediatr-dependency-injection-extensions</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageTags>amazon;alexa;echo;dot;echo dot;skills;lambda;mediator;dependency injection</PackageTags>
-    <PackageReleaseNotes>Initial release.</PackageReleaseNotes>
+    <PackageReleaseNotes>Converted IResponseBuilder to scoped.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Alexa.Net.Lambda" Version="1.0.1" />
-    <PackageReference Include="Alexa.Net.MediatR" Version="1.0.1" />
+    <PackageReference Include="Alexa.Net.MediatR" Version="1.0.3" />
     <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />

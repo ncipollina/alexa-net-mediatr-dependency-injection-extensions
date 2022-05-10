@@ -199,7 +199,7 @@ public static class ServiceRegistrar
             ServiceLifetime.Transient));
         services.TryAddTransient<IHandlerInput, DefaultHandlerInput>();
         services.AddScoped<IAttributesManager, AttributesManager>();
-        services.AddSingleton<IResponseBuilder, DefaultResponseBuilder>();
+        services.AddScoped<IResponseBuilder, DefaultResponseBuilder>();
         services.TryAddTransientExact(typeof(IPipelineBehavior), typeof(RequestInterceptorBehavior));
         services.TryAddTransientExact(typeof(IPipelineBehavior), typeof(ResponseInterceptorBehavior));
         services.TryAddTransientExact(typeof(IPipelineBehavior), typeof(RequestExceptionProcessBehavior));

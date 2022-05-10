@@ -9,6 +9,9 @@ namespace Alexa.Net.MediatR.Extensions.Microsoft.DependencyInjection.Tests;
 
 public class LaunchRequestHandler : IRequestHandler<LaunchRequest>
 {
+    public Task<bool> CanHandle(IHandlerInput input, CancellationToken cancellationToken = default) =>
+        Task.FromResult(true);
+
     public Task<SkillResponse> Handle(IHandlerInput input, CancellationToken cancellationToken = new CancellationToken())
     {
         return input.ResponseBuilder.Empty(cancellationToken);
@@ -17,6 +20,9 @@ public class LaunchRequestHandler : IRequestHandler<LaunchRequest>
 
 public class SessionEndHandler : IRequestHandler<SessionEndedRequest>
 {
+    public Task<bool> CanHandle(IHandlerInput input, CancellationToken cancellationToken = default) =>
+        Task.FromResult(true);
+
     public Task<SkillResponse> Handle(IHandlerInput input, CancellationToken cancellationToken = new CancellationToken())
     {
         return input.ResponseBuilder.Empty(cancellationToken);
@@ -25,6 +31,9 @@ public class SessionEndHandler : IRequestHandler<SessionEndedRequest>
 
 public class IntentHandler : IRequestHandler<IntentRequest>
 {
+    public Task<bool> CanHandle(IHandlerInput input, CancellationToken cancellationToken = default) =>
+        Task.FromResult(true);
+    
     public Task<SkillResponse> Handle(IHandlerInput input, CancellationToken cancellationToken = new CancellationToken())
     {
         return input.ResponseBuilder.Empty(cancellationToken);
