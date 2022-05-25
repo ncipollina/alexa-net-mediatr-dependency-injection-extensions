@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using Alexa.Net.Lambda.Context;
 using Alexa.Net.MediatR.Attributes;
+using Alexa.Net.MediatR.Attributes.Persistence;
 using Alexa.Net.MediatR.Pipeline;
 using Alexa.Net.MediatR.Response;
 using Microsoft.Extensions.DependencyInjection;
@@ -19,11 +20,17 @@ public static class ServiceRegistrar
         var defaultHandlers = assembliesToScan.SelectMany(a => a.DefinedTypes)
             .Where(x => x.CanBeCastTo(typeof(IDefaultRequestHandler)) && x.IsConcrete()).ToList();
 
-        if (defaultHandlers.Count > 1)
-            throw new ArgumentException($"Only 1 {typeof(IDefaultRequestHandler)} may be registered per skill");
-        if (defaultHandlers.Any())
+        foreach (var defaultHandler in defaultHandlers)
         {
-            services.AddTransient(typeof(IDefaultRequestHandler), defaultHandlers.First());
+            services.TryAddTransient(typeof(IDefaultRequestHandler), defaultHandler);
+        }
+
+        var persistenceAdapters = assembliesToScan.SelectMany(a => a.DefinedTypes)
+            .Where(x => x.CanBeCastTo(typeof(IPersistenceAdapter)) && x.IsConcrete()).ToList();
+
+        foreach (var persistenceAdapter in persistenceAdapters)
+        {
+            services.TryAddSingleton(typeof(IPersistenceAdapter), persistenceAdapter);
         }
         
         var pipelineInterfaceTypes = new[]
