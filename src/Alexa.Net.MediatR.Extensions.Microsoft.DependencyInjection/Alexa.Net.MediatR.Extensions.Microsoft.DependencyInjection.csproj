@@ -1,10 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>netstandard2.1</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <VersionPrefix>1.0.2</VersionPrefix>
+    <VersionPrefix>1.0.3</VersionPrefix>
     <RootNamespace>Alexa.Net.MediatR</RootNamespace>
     <Authors>Nick Cipollina</Authors>
     <Description>Alexa.Net.MediatR extensions for Microsoft.Extensions.DependencyInjection</Description>
@@ -14,14 +14,15 @@
     <PackageTags>amazon;alexa;echo;dot;echo dot;skills;lambda;mediator;dependency injection</PackageTags>
     <PackageReleaseNotes>Added registration of IPersistenceAdapter.
 Changed logic so that adding multiple IDefaultRequestHandler doesn't throw an exception.</PackageReleaseNotes>
+    <LangVersion>10</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Alexa.Net.Lambda" Version="1.0.1" />
-    <PackageReference Include="Alexa.Net.MediatR" Version="1.0.4" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="6.0.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Options" Version="6.0.0" />
+    <PackageReference Include="Alexa.Net.Lambda" Version="1.0.2" />
+    <PackageReference Include="Alexa.Net.MediatR" Version="1.0.5" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="7.0.1" />
   </ItemGroup>
 
 </Project>
