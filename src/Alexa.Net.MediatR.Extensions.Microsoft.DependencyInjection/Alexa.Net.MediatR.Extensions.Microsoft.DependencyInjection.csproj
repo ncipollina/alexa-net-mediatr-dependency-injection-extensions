@@ -15,14 +15,15 @@
     <PackageReleaseNotes>Added registration of IPersistenceAdapter.
 Changed logic so that adding multiple IDefaultRequestHandler doesn't throw an exception.</PackageReleaseNotes>
     <LangVersion>10</LangVersion>
+    <Version>1.0.4</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Alexa.Net.Lambda" Version="1.0.2" />
-    <PackageReference Include="Alexa.Net.MediatR" Version="1.0.5" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
-    <PackageReference Include="Microsoft.Extensions.Options" Version="7.0.1" />
+    <PackageReference Include="Alexa.Net.Lambda" Version="1.0.3" />
+    <PackageReference Include="Alexa.Net.MediatR" Version="1.0.6" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="9.0.0" />
   </ItemGroup>
 
 </Project>
